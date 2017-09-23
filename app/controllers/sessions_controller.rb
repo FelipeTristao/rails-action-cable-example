@@ -1,16 +1,20 @@
-class UsersController < ApplicationController
+class SessionsController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    user = User.find_by(user_params)
+    if user
       session[:user_id] = user.id
       # redirect_to chatrooms_path
+      raise 'session created'
     else
-      redirect_to new_user_path, flash[:notice] = {:notice => 'Invalid username'}
+      redirect_to login_path, :flash => {:notice => 'Authentication failed'}
     end
+  end
+
+  def destroy
   end
 
   private
