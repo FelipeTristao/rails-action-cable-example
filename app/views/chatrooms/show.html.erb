@@ -3,16 +3,16 @@
 <%= link_to 'Back', chatrooms_path %>
 
 
-<div class="messages">
+<div id="messages" class="messages">
   <% @chatroom.messages.each do |message| %>
-    <span> <%= message.user.username %> </span>
     <p>
+      <b> <%= message.user.username %> </b>:
       <%= message.text %>
     </p>
   <% end %>
 </div>
 
-<%= form_for @message do |f| %>
+<%= form_for @message, remote: true, authenticity_token: true do |f| %>
   <%= f.label :text %>
   <%= f.text_field :text %>
   <%= f.hidden_field :chatroom_id, value: @chatroom.id %>

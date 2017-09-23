@@ -6,9 +6,11 @@ class MessagesController < ApplicationController
     chatroom = Chatroom.find(message.chatroom_id)
 
     if message.save
-      redirect_to chatroom
-    else
-      redirect_to chatroom, flash[:notice] = {:notice => 'Error saving message'}
+      # redirect_to chatroom
+      ActionCable.server.broadcast 'messages',
+        message: message.text,
+        user: message.user.username
+      head :ok
     end
   end
 
