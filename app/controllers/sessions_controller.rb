@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(user_params)
     if user
       session[:user_id] = user.id
-      # redirect_to chatrooms_path
-      raise 'session created'
+      redirect_to chatrooms_path
     else
       redirect_to login_path, :flash => {:notice => 'Authentication failed'}
     end

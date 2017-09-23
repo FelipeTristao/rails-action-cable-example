@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'users#create'
-  
+  root 'sessions#new'
+
   get 'login', to: "sessions#new"
   post '/login', to: "sessions#create"
   #get 'sessions/destroy'
-  get '/register', to: 'users#create'
+  get '/register', to: 'users#new'
 
   resources :users, only: [:new, :create]
   resources :chatrooms
