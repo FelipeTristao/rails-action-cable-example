@@ -1,3 +1,20 @@
 <h1> <%= @chatroom.topic %> </h1>
 <%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
 <%= link_to 'Back', chatrooms_path %>
+
+
+<div class="messages">
+  <% @chatroom.messages.each do |message| %>
+    <span> <%= message.user.username %> </span>
+    <p>
+      <%= message.text %>
+    </p>
+  <% end %>
+</div>
+
+<%= form_for @message do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+  <%= f.submit %>
+<% end %>
