@@ -6,5 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: action-cable-example_production
+  url: redis://redistogo:42b8a76c07aee2397b45e271c8511fb7@tarpon.redistogo.com:11704/
