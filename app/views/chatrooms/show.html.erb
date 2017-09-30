@@ -3,7 +3,7 @@
 <%= link_to 'Back', chatrooms_path %>
 
 
-<div id="messages" class="messages">
+<div id="messages-chatroom-<%= @chatroom.id %>" class="messages">
   <% @chatroom.messages.each do |message| %>
     <p>
       <b> <%= message.user.username %> </b>:
