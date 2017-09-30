@@ -1,6 +1,6 @@
 <h1>Chatrooms</h1>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th colspan="3"></th>
@@ -17,8 +17,14 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
-
-<%= link_to 'New Chatroom', new_chatroom_path %>
+<div class="chatrooms">
+  <% @chatrooms.each do |chatroom| %>
+    <%= link_to chatroom do %>
+      <div class="chatroom">
+        <%= chatroom.topic %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

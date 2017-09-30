@@ -7,19 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
   </head>
 
   <body>
-    <% if notice %>
-      <p><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p><%= alert %></p>
-    <% end %>
+    <div class="wrapper">
+      <header>
+        <div class="links">
+          <%= link_to 'Home', root_path %>
+          <% if logged_in? %>
+            <%= link_to 'Logout', logout_path  %>
+          <% end %>
+        </div>
 
-    <% if logged_in? %>
-      <%= link_to 'Logout', logout_path  %>
-    <% end %>
-    <%= yield %>
+        <% if notice %>
+          <p><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p><%= alert %></p>
+        <% end %>
+      </header>
+
+      <div class="main">
+        <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>

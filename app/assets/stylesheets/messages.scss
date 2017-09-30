@@ -1,3 +1,72 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$black: #272121;
+$grey: #363333;
+$orange: #E16428;
+$white: #F6E9E9;
+$font-normal: 14px;
+$font-big: 24px;
+$font: 'Roboto', sans-serif;
+
+body {
+  margin: 0px;
+  color: $black;
+  font-family: $font;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a, a:hover, a:focus, a:visited {
+  text-decoration: none;
+  color: $orange;
+}
+
+div.wrapper {
+  width: 500px;
+  margin: auto;
+  background: $white;
+}
+
+header {
+  background-color: $black;
+  color: $white;
+
+  div.links {
+    text-align: right;
+
+    a {
+      padding: 15px;
+      background: $grey;
+      display: inline-block;
+      color: $white;
+      font-weight: lighter;
+    }
+  }
+}
+
+div.main {
+  padding: 20px;
+}
+
+.chatrooms {
+
+  margin: 20px 0px;
+
+  .chatroom {
+    padding: 20px 0px 20px 20px;
+    margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.06);
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+  }
+}
