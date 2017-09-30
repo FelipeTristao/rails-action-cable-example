@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user, only: [:new, :create]
+  
   def new
     @user = User.new
   end
@@ -14,6 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    reset_session
+    redirect_to root_path
   end
 
   private

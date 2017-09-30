@@ -17,6 +17,9 @@
       <p><%= alert %></p>
     <% end %>
 
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path  %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
