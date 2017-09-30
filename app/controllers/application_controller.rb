@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user
 
   helper_method :current_user, :logged_in?
-  
+
   def authenticate_user
-    redirect_to root_path unless logged_in?
+    redirect_to login_path unless logged_in?
   end
 
   def logged_in?
