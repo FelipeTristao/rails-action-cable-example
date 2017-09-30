@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to chatrooms_path
     else
-      redirect_to new_user_path, flash[:notice] = {:notice => 'Invalid username'}
+      redirect_to new_user_path, flash[:notice] = {:notice => 'Username invalid or already registered.'}
     end
   end
 

@@ -1,8 +1,18 @@
-<h1>New User</h1>
+<h1>Register</h1>
 
+<div class="form form-inline">
+  <%= form_for @user do |f|  %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.submit 'Register', class: 'bt' %>
+  <% end %>
+</div>
 
-<%= form_for @user do |f|  %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.submit %>
-<% end %>
+<div class="errors">
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
+</div>
