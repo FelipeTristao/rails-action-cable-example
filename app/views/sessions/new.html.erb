@@ -1,9 +1,18 @@
-<h1>Sessions#new</h1>
+<h1>Login</h1>
 
-<%= form_for @user, url: login_path do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.submit 'Login' %>
-<% end %>
+<div class="form form-inline">
+  <%= form_for @user, url: login_path do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.submit 'Login', class: 'bt' %>
+  <% end %>
+</div>
 
-<%= link_to 'Register', new_user_path  %>
+<div class="errors">
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
+</div>

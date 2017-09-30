@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authenticate_user, only: [:new, :create]
-  
+
   def new
     @user = User.new
   end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to chatrooms_path
     else
-      redirect_to login_path, :flash => {:notice => 'Authentication failed'}
+      redirect_to login_path, :flash => {:notice => 'This username is not registered.'}
     end
   end
 

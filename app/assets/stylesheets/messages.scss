@@ -70,3 +70,43 @@ div.main {
     letter-spacing: 0.9px;
   }
 }
+
+.form {
+  padding: 20px 0px;
+
+  label {
+    color: $orange;
+    font-weight: bold;
+  }
+
+  input[type='text'] {
+    background-color: #fff7f7;
+    border: 1px solid #ccbdbd;
+    padding: 7px;
+    border-radius: 4px;
+    color: #5d5959;
+  }
+
+  &.form-inline form {
+    text-align: center;
+
+    & > * {
+      margin-right: 10px;
+    }
+  }
+}
+
+.bt {
+  text-transform: uppercase;
+  color: #f6e9e9;
+  background-color: #363333;
+  font-size: 11px;
+  padding: 9px;
+  border: 1px solid #ccbdbd;
+  border-radius: 4px;
+}
+
+.errors {
+  color: red;
+  text-align: center;
+}
