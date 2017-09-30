@@ -110,3 +110,36 @@ div.main {
   color: red;
   text-align: center;
 }
+
+.messages {
+  display: inline-block;
+  width: calc(100% - 20px);
+  max-height: 400px;
+  overflow-y: scroll;
+  padding-right: 20px;
+
+  .mine, .theirs {
+    margin: 14px 0px;
+  }
+
+  .mine {
+    text-align: right;
+  }
+  .theirs {
+    text-align: left;
+  }
+
+  .author {
+    color: $orange;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .message {
+    background-color: #dacbcb;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+  }
+}

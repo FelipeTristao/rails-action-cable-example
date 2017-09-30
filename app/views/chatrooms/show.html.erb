@@ -1,20 +1,32 @@
 <h1> <%= @chatroom.topic %> </h1>
-<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', chatrooms_path %>
-
 
 <div id="messages-chatroom-<%= @chatroom.id %>" class="messages">
   <% @chatroom.messages.each do |message| %>
-    <p>
-      <b> <%= message.user.username %> </b>:
-      <%= message.text %>
-    </p>
+    <div class="<%= current_user == message.user ? 'mine' : 'theirs' %>">
+      <span class="author"> <%= message.user.username %></span>
+      <span class="message">
+        <%= message.text %>
+      </span>
+    </div>
   <% end %>
 </div>
 
-<%= form_for @message, remote: true, authenticity_token: true do |f| %>
-  <%= f.label :text %>
-  <%= f.text_field :text %>
-  <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
-  <%= f.submit %>
-<% end %>
+<div class="form form-inline">
+  <%= form_for @message, remote: true, authenticity_token: true do |f| %>
+    <%= f.text_field :text %>
+    <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+    <%= f.submit 'Send', class: 'bt' %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  window.setInterval(function() {
+    var divMessages = document.getElementsByClassName("messages")[0];
+    divMessages.scrollTop = divMessages.scrollHeight;
+  }, 5000);
+
+  $(document).ready(function(){
+    var divMessages = document.getElementsByClassName("messages")[0];
+    divMessages.scrollTop = divMessages.scrollHeight;
+  });
+</script>
