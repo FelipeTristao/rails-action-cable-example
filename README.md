@@ -1,24 +1,7 @@
-# README
+## Rails and Real Time - Chat App using Rails 5 Action Cable
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample app trying out the real time features included in Rails 5 with Action Cable.
 
-Things you may want to cover:
+The app was built based on the tutorial made by Sophie De Benedetto found [here](https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable).
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The deployed app can be found [here](https://action-cable-chat-sample.herokuapp.com).
