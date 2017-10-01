@@ -27,6 +27,8 @@
 
   $(document).ready(function(){
     var divMessages = document.getElementsByClassName("messages")[0];
-    divMessages.scrollTop = divMessages.scrollHeight;
+    if(typeof divMessages != 'undefined') {
+        divMessages.scrollTop = divMessages.scrollHeight;
+    }
   });
 </script>
